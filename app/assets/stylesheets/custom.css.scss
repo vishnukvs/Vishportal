@@ -4,6 +4,7 @@ $navbar-inverse-link-color: white;
 $brand-primary: #f39c12;
 $jumbotron-bg: #bdc3c7;
 $btn-success-bg: #2ecc71;
+$grayLighter: #2ecc71;
 @import 'bootstrap';
 /** Custom Css **/
 html {
@@ -29,3 +30,43 @@ textarea {
 
 /** Footer ***/
 .footer,.push{height:155px;}
+
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+/** Forms **/
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  
+}
+
+input {
+  height: auto !important;
+}
