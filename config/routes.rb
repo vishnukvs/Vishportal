@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
+  get 'zombies/new'
+
   root 'pages#home'
   resources :microposts
+  resources :zombies
+  match '/signup',  to: 'zombies#new',            via: 'get'
 
   resources :users
+  resources :sessions, only: [:new,:create,:destroy ]
+  #match '/signup',  to: 'users#new',            via: 'get'
+  #match '/signin',  to: 'sessions#new',         via: 'get'
+  #match '/signout', to: 'sessions#destroy',     via: 'delete'
+
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "users#new", :as => "sign_up"
 
   get 'pages/home'
 
